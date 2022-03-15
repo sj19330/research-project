@@ -25,15 +25,15 @@ def getData(dataLen, noise, datacheck):
         if datacheck:
             print("Target value: ", targetValue, "Normal value: ", normalValue, "     s = ", s, "      label = ", label)
         if label == 1:
-            sensorySignal = torch.tensor([targetValue, normalValue])
+            dataset[index] = torch.tensor([targetValue, normalValue])
         elif label == 2:
-            sensorySignal = torch.tensor([normalValue, targetValue])
+            dataset[index] = torch.tensor([normalValue, targetValue])
         else:
             print("ERROR: label is out of range")
-        dataset[index] = sensorySignal
+            break
         labels[index] = torch.tensor([label])
         if (index * 100 / dataLen) % 5 == 0:
-            print(index * 100 / dataLen, "% done making data")
+            print(index * 100 / dataLen, "% done making sensory signals")
     print("sensory signals are made")
     return dataset, labels
 

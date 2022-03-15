@@ -7,3 +7,5 @@ if __name__ == '__main__':
     for i in range(len(t)):
         t[i] = torch.tensor([ i/2, ])
     print(t)
+
+# blakdfjlsdkfjkl

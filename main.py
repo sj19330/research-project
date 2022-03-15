@@ -23,7 +23,7 @@ def getData(dataLen, noise, datacheck):
         targetValue = np.random.normal(s, variance)
         normalValue = np.random.normal(0, variance)
         if datacheck:
-            print("ta rget value: ", targetValue,"Normal value: ", normalValue, "     s = ", s, "      label = ", l)
+            print("ta rget    value: ", targetValue,"Normal value: ", normalValue, "     s = ", s, "      label = ", l)
         if l == 1:
             sensorySignal = torch.tensor([[targetValue, normalValue]])
         elif l == 2:
